@@ -1,15 +1,12 @@
-package bean.estudante;
+package Maratona.bean.estudante.estudante.model;
 
-import javax.inject.Named;
-import java.io.Serializable;
+import Maratona.bean.estudante.estudante.enums.Turno;
 
 /**
  * Created by Allyson 20/06/2020
  * */
 
-@Named
-
-public class EstudanteRegistrarBean implements Serializable{
+public class Estudante {
 
     private String nome = "Allyson";
     private String sobrenome = "Oliveira";
@@ -17,6 +14,15 @@ public class EstudanteRegistrarBean implements Serializable{
     private double nota_1;
     private double nota_2;
     private double nota_3 = 10;
+    private Turno turno = Turno.MATUTINO;
+
+    public Turno getTurno() {
+        return turno;
+    }
+
+    public void setTurno(Turno turno) {
+        this.turno = turno;
+    }
 
     public String getNome() {
         return nome;

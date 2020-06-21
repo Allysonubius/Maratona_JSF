@@ -4,12 +4,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 <h:body>
+   <p:importEnum type="Maratona.bean.estudante.estudante.enums.Turno" var="Turno" allSuffix="ALL_ENUM_VALUES" />
    <f:view>
       <h:outputLabel value="Hello, world"/><br/>
-      <h:outputLabel value="#{estudanteRegistrarBean.nome += ' Oliveira'}"/>
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante.nome += ' de Oliveira'}"/><br/>
    </f:view>
    <!--Palavras reservadas : and, or, not, eq, ne, gt, le, ge, true, false, null, instaceof, empty e mod-->
+      <h:outputText value="ENUM"/><br/>
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante.turno}"/><br/>
+   <h:outputLabel value="#{estudanteRegistrarBean.estudante.turno eq 'MATUTINO'}"/><br/>
 </h:body>
 </html>
