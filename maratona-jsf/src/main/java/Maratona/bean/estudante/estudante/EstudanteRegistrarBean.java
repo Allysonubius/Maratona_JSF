@@ -2,6 +2,7 @@ package Maratona.bean.estudante.estudante;
 
 import Maratona.bean.estudante.estudante.model.Estudante;
 
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.*;
@@ -13,7 +14,7 @@ import static java.util.Arrays.asList;
  * */
 
 @Named
-
+@ViewScoped
 public class EstudanteRegistrarBean implements Serializable{
 
     private Estudante estudante = new Estudante();
@@ -25,6 +26,24 @@ public class EstudanteRegistrarBean implements Serializable{
     private Set<String> nomesSet = new HashSet<>(asList ("Ana", "Lobo", "Vovo"));
 
     private Map<String , String> nomesMap = new HashMap<>();
+
+    private boolean mostrarNotas;
+
+    public boolean isMostrarNotas() {
+        return mostrarNotas ;
+    }
+    public String exibirNotas(){
+        this.mostrarNotas = true;
+        return "index";
+    }
+    public String escondeNotas(){
+        this.mostrarNotas = false;
+        return "index";
+    }
+
+    public void setMostrarNotas(boolean mostrarNotas) {
+        this.mostrarNotas = mostrarNotas;
+    }
 
     {
         nomesMap.put("Goku", "O mais forte");

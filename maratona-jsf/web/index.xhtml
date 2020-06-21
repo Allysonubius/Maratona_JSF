@@ -6,6 +6,9 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+</h:head>
 <h:body>
    <p:importEnum type="Maratona.bean.estudante.estudante.enums.Turno" var="Turno" allSuffix="ALL_ENUM_VALUES" />
    <f:view>
@@ -58,7 +61,25 @@
    <ui:repeat value="#{estudanteRegistrarBean.nomeList}" var="nome"
    varStatus="status">
       <h:outputLabel value="#{nome}" style="color: #{status.index mod 2 == 0 ? 'red' : 'green'} "/><br/>
-   </ui:repeat>
+   </ui:repeat><br/>
+   <!--Rendered-->
+   <h:form>
+      <h:commandButton value="Exibir Notas" >
+         <f:ajax render="notasGrid" listener="#{estudanteRegistrarBean.exibirNotas()}"/>
+      </h:commandButton><br/>
+      <h:commandButton value="Esconder Notas" >
+         <f:ajax render="notasGrid" listener="#{estudanteRegistrarBean.escondeNotas()}"/>
+      </h:commandButton><br/>
+      <h:panelGrid id ="notasGrid">
+   <h:outputText value="#{estudanteRegistrarBean.estudante.nome}"/><br/>
+   <h:outputText value="#{estudanteRegistrarBean.estudante.sobrenome}"/><br/>
+   <h:outputText value="#{estudanteRegistrarBean.estudante.turno}"/><br/>
+   <h:outputText value="#{estudanteRegistrarBean.estudante.nota_1}" rendered = "#{estudanteRegistrarBean.mostrarNotas}"/>
+   <h:outputText value="#{estudanteRegistrarBean.estudante.nota_2}" rendered = "#{estudanteRegistrarBean.mostrarNotas}"/>
+   <h:outputText value="#{estudanteRegistrarBean.estudante.nota_3}" rendered = "#{estudanteRegistrarBean.mostrarNotas}"/>
+   <h:outputText value="#{estudanteRegistrarBean.mostrarNotas}"/>
+      </h:panelGrid><br/>
+   </h:form>
    <script type="text/javascript">
       function fazMagica(magica){
          alert(magica);
