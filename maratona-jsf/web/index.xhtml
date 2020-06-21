@@ -5,9 +5,11 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-
+<h:body>
    <f:view>
       <h:outputLabel value="Hello, world"/><br/>
-      <h:outputLabel value="#{estudanteRegistrarBean.nome}"/>
+      <h:outputLabel value="#{estudanteRegistrarBean.nome += ' Oliveira'}"/>
    </f:view>
+   <!--Palavras reservadas : and, or, not, eq, ne, gt, le, ge, true, false, null, instaceof, empty e mod-->
+</h:body>
 </html>
