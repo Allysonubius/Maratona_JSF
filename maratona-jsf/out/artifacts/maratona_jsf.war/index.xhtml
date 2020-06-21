@@ -15,6 +15,34 @@
    <!--Palavras reservadas : and, or, not, eq, ne, gt, le, ge, true, false, null, instaceof, empty e mod-->
       <h:outputText value="ENUM"/><br/>
       <h:outputLabel value="#{estudanteRegistrarBean.estudante.turno}"/><br/>
-   <h:outputLabel value="#{estudanteRegistrarBean.estudante.turno eq 'MATUTINO'}"/><br/>
+      <h:outputLabel value="#{estudanteRegistrarBean.estudante.turno eq 'MATUTINO'}"/><br/>
+   <!--Arrays-->
+      <h:outputLabel value="#{estudanteRegistrarBean.nomesArray[0]}
+                            #{estudanteRegistrarBean.nomesArray[1]}
+                            #{estudanteRegistrarBean.nomesArray[2]}"/><br/>
+   <!--LIST-->
+      <h:outputLabel value="#{estudanteRegistrarBean.nomeList[0]}
+                            #{estudanteRegistrarBean.nomeList[1]}
+                            #{estudanteRegistrarBean.nomeList[2]}"/><br/>
+<!--   &lt;!&ndash;SET&ndash;&gt;-->
+<!--   <h:outputLabel value="#{estudanteRegistrarBean.nomesSet[0]}-->
+<!--                         #{estudanteRegistrarBean.nomesSet[1]}-->
+<!--                         #{estudanteRegistrarBean.nomesSet[2]}"/><br/>-->
+   <!--UI: repeat Arrays-->
+   <ui:repeat value="#{estudanteRegistrarBean.nomesArray}" var="nome">
+      <h:outputLabel value="#{nome}"/><br/>
+   </ui:repeat>
+   <!--UI: repeat List-->
+   <ui:repeat value="#{estudanteRegistrarBean.nomeList}" var="nome">
+      <h:outputLabel value="#{nome}"/><br/>
+   </ui:repeat>
+   <!--UI: repeat Set-->
+   <ui:repeat value="#{estudanteRegistrarBean.nomesSet}" var="nome">
+      <h:outputLabel value="#{nome}"/><br/>
+   </ui:repeat>
+   <!--Map-->
+   <h:outputLabel value="MAP" />
+   <h:outputLabel value="#{estudanteRegistrarBean.nomesMap}" />
+   
 </h:body>
 </html>
