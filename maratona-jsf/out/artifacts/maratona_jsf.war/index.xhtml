@@ -43,14 +43,29 @@
    <!--Map-->
    <h:outputLabel value="MAP" /><br/>
    <h:outputLabel value="#{estudanteRegistrarBean.nomesMap}" /><br/>
-    <!--Aceesando BD-->
+    <!--Executando metodos no Bean-->
     #{estudanteRegistrarBean.executar()}<br/>
     #{estudanteRegistrarBean.executar('xuxu blz')}<br/>
     #{estudanteRegistrarBean.executar(estudanteRegistrarBean.estudante.nome)}<br/>
     #{estudanteRegistrarBean.executarRetorno(estudanteRegistrarBean.estudante.nome)}<br/>
    <!--Formulário-->
    <h:form>
-    <h:commandButton value="Next page " action="#{estudanteRegistrarBean.pageIndex2('')}"/>
+      <h:commandButton value="Next page " action="#{estudanteRegistrarBean.pageIndex2('')}"/><br/>
+      <h:commandButton value="Soltar magia" onclick="fazMagica('Open Magic')"/><br/>
+      <h:commandButton value="Nome em Alerta" onclick="alertNome('The name is alert !')"/><br/>
    </h:form>
+   <!--Imprimindo CSS com EL-->
+   <ui:repeat value="#{estudanteRegistrarBean.nomeList}" var="nome"
+   varStatus="status">
+      <h:outputLabel value="#{nome}" style="color: #{status.index mod 2 == 0 ? 'red' : 'green'} "/><br/>
+   </ui:repeat>
+   <script type="text/javascript">
+      function fazMagica(magica){
+         alert(magica);
+      }
+      function alertNome(nome){
+         alert(nome);
+      }
+   </script>
 </h:body>
 </html>
