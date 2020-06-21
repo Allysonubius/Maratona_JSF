@@ -35,6 +35,29 @@ public class EstudanteRegistrarBean implements Serializable{
         }
     }
 
+    public void executar(){
+        System.out.println("Fazendo uma busca no BD");
+        System.out.println("Processando os BD");
+        System.out.println("Exibindo os BD");
+    }
+
+    public void executar(String param){
+        System.out.println("Fazendo uma busca no BD " + param);
+        System.out.println("Processando os BD");
+        System.out.println("Exibindo os BD");
+    }
+
+    public String executarRetorno(String param){
+        return "Ola allyson" + param;
+    }
+
+    public String pageIndex2(String param){
+        return "index2";
+    }
+    public String pageIndex2(){
+        return "index2?faces-redirect=true";
+    }
+
     public Map<String, String> getNomesMap() {
         return nomesMap;
     }

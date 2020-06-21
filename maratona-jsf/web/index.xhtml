@@ -41,8 +41,16 @@
       <h:outputLabel value="#{nome}"/><br/>
    </ui:repeat>
    <!--Map-->
-   <h:outputLabel value="MAP" />
-   <h:outputLabel value="#{estudanteRegistrarBean.nomesMap}" />
-   
+   <h:outputLabel value="MAP" /><br/>
+   <h:outputLabel value="#{estudanteRegistrarBean.nomesMap}" /><br/>
+    <!--Aceesando BD-->
+    #{estudanteRegistrarBean.executar()}<br/>
+    #{estudanteRegistrarBean.executar('xuxu blz')}<br/>
+    #{estudanteRegistrarBean.executar(estudanteRegistrarBean.estudante.nome)}<br/>
+    #{estudanteRegistrarBean.executarRetorno(estudanteRegistrarBean.estudante.nome)}<br/>
+   <!--Formulário-->
+   <h:form>
+    <h:commandButton value="Next page " action="#{estudanteRegistrarBean.pageIndex2('')}"/>
+   </h:form>
 </h:body>
 </html>
